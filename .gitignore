@@ -58,6 +58,7 @@ coverage.xml
 *.onnx
 *.engine
 *.bin
+*.db
 runs/
 data/
 recordings/
