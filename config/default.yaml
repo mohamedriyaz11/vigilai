@@ -1,0 +1,43 @@
+# VigilAI System Configuration
+# Vishwakarma Awards 2026-27 | Application ID: VK26-AU-HCI-0036
+# Theme 9: HCI 2.0 (Agentic Hardware & Embodied Intelligent Systems)
+
+detection:
+  input_size: 320
+  min_confidence: 0.6
+  confirm_frames: 3
+  cooldown_s: 120
+  blur_threshold: 100.0         # Variance of Laplacian below this is flagged blurry
+  brightness_threshold: 40.0   # Mean pixel intensity below this is flagged dark
+  coarse_grid_cols: 3          # For tracking usual placement (left, center, right)
+  coarse_grid_rows: 3          # For tracking usual placement (top, mid, bottom)
+
+servo:
+  min_deg: 10
+  max_deg: 170
+  slew_dps: 120                # 120 deg/s slew cap
+  hfov_deg: 90                 # Horizontal field of view in degrees
+  heartbeat_ms: 200            # Heartbeat packet interval
+  center_deg: 90               # Neutral calibrated center angle
+  port: "COM5"                 # Default serial port if hardware servo enabled
+  baudrate: 115200             # ESP32 serial communication baud rate
+  command_rate_hz: 20          # Maximum command transmit frequency
+
+agent:
+  llm_provider: none           # none | local | cloud (none uses fast templated reasoning)
+  quiet_hours:
+    - "22:00"
+    - "07:00"
+  local_model_path: ""         # Path to GGUF model if provider is "local"
+  cloud_model_name: "gpt-4o-mini"
+  sqlite_db_path: "vigilai_memory.db"
+  stale_object_threshold_m: 30 # Object displaced for >30m triggers medium relevance
+
+dashboard:
+  host: "127.0.0.1"
+  port: 5000
+  auth_token: "vigil-dev-token-change-in-production"
+
+privacy:
+  save_frames: false           # Hard constraint: video frames are NEVER saved to disk
+  cloud_llm_enabled: false     # Hard constraint: cloud transmission disabled by default

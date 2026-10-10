@@ -1,0 +1,30 @@
+# VigilAI: Core Dependencies
+# Vishwakarma Awards 2026-27 | Application ID: VK26-AU-HCI-0036
+
+# Core Vision & Perception
+ultralytics>=8.3.0
+opencv-python>=4.10.0
+numpy>=1.26.0
+
+# Agent Framework & State Machine
+langgraph>=0.2.0
+langchain-core>=0.3.0
+pydantic>=2.8.0
+pyyaml>=6.0.2
+
+# Actuation & Serial Hardware
+pyserial>=3.5
+
+# Speech & Voice Feedback
+pyttsx3>=2.90
+
+# Dashboard Web UI & WebSocket
+Flask>=3.0.0
+flask-sock>=0.7.0
+
+# Networking & Cloud LLM connector (Optional text-only)
+requests>=2.31.0
+
+# Testing, Linting & Code Quality
+pytest>=8.2.0
+ruff>=0.6.0
