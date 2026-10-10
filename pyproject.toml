@@ -59,6 +59,7 @@ select = [
 ignore = [
     "E501", # line too long (handled by formatter)
     "B008", # function calls in default arguments
+    "E402", # module level import not at top of file (for scripts setting sys.path)
 ]
 
 [tool.ruff.format]

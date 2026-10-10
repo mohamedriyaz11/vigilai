@@ -1,0 +1,209 @@
+[
+  {
+    "scenario": "Medication Dosage Window",
+    "frame_idx": 1,
+    "timestamp": 1791639000.0,
+    "detections": [
+      {
+        "label": "medicine box",
+        "confidence": 0.88,
+        "bbox": [
+          0.15,
+          0.2,
+          0.35,
+          0.45
+        ],
+        "center_x_norm": 0.25,
+        "center_y_norm": 0.32,
+        "grid_cell": [
+          0,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "scenario": "Medication Dosage Window",
+    "frame_idx": 2,
+    "timestamp": 1791639000.1,
+    "detections": [
+      {
+        "label": "medicine box",
+        "confidence": 0.92,
+        "bbox": [
+          0.15,
+          0.2,
+          0.35,
+          0.45
+        ],
+        "center_x_norm": 0.25,
+        "center_y_norm": 0.32,
+        "grid_cell": [
+          0,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "scenario": "Medication Dosage Window",
+    "frame_idx": 3,
+    "timestamp": 1791639000.2,
+    "detections": [
+      {
+        "label": "medicine box",
+        "confidence": 0.94,
+        "bbox": [
+          0.15,
+          0.2,
+          0.35,
+          0.45
+        ],
+        "center_x_norm": 0.25,
+        "center_y_norm": 0.32,
+        "grid_cell": [
+          0,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "scenario": "Walking Path Obstacle",
+    "frame_idx": 4,
+    "timestamp": 1791639005.0,
+    "detections": [
+      {
+        "label": "backpack",
+        "confidence": 0.84,
+        "bbox": [
+          0.42,
+          0.6,
+          0.62,
+          0.88
+        ],
+        "center_x_norm": 0.52,
+        "center_y_norm": 0.74,
+        "grid_cell": [
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "scenario": "Walking Path Obstacle",
+    "frame_idx": 5,
+    "timestamp": 1791639005.1,
+    "detections": [
+      {
+        "label": "backpack",
+        "confidence": 0.89,
+        "bbox": [
+          0.42,
+          0.6,
+          0.62,
+          0.88
+        ],
+        "center_x_norm": 0.52,
+        "center_y_norm": 0.74,
+        "grid_cell": [
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "scenario": "Walking Path Obstacle",
+    "frame_idx": 6,
+    "timestamp": 1791639005.2,
+    "detections": [
+      {
+        "label": "backpack",
+        "confidence": 0.91,
+        "bbox": [
+          0.42,
+          0.6,
+          0.62,
+          0.88
+        ],
+        "center_x_norm": 0.52,
+        "center_y_norm": 0.74,
+        "grid_cell": [
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "scenario": "Routine Non-Hazard Item",
+    "frame_idx": 7,
+    "timestamp": 1791639010.0,
+    "detections": [
+      {
+        "label": "cup",
+        "confidence": 0.72,
+        "bbox": [
+          0.7,
+          0.15,
+          0.85,
+          0.35
+        ],
+        "center_x_norm": 0.78,
+        "center_y_norm": 0.25,
+        "grid_cell": [
+          0,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "scenario": "Routine Non-Hazard Item",
+    "frame_idx": 8,
+    "timestamp": 1791639010.1,
+    "detections": [
+      {
+        "label": "cup",
+        "confidence": 0.74,
+        "bbox": [
+          0.7,
+          0.15,
+          0.85,
+          0.35
+        ],
+        "center_x_norm": 0.78,
+        "center_y_norm": 0.25,
+        "grid_cell": [
+          0,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "scenario": "Routine Non-Hazard Item",
+    "frame_idx": 9,
+    "timestamp": 1791639010.2,
+    "detections": [
+      {
+        "label": "cup",
+        "confidence": 0.73,
+        "bbox": [
+          0.7,
+          0.15,
+          0.85,
+          0.35
+        ],
+        "center_x_norm": 0.78,
+        "center_y_norm": 0.25,
+        "grid_cell": [
+          0,
+          2
+        ]
+      }
+    ]
+  }
+]
