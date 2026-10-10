@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VigilAI — Ambient Companion Telemetry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body data-token="{{ token }}">
+  <div class="app-layout">
+    <header class="app-header">
+      <div class="brand">
+        <div class="logo-orb"></div>
+        <div>
+          <h1 class="brand-title">VigilAI <span class="badge badge-accent">HCI 2.0 Companion</span></h1>
+          <p class="brand-sub">VK26-AU-HCI-0036 &bull; Proactive Situational Awareness</p>
+        </div>
+      </div>
+      <div class="header-controls">
+        <div class="privacy-badge">
+          <span class="dot-indicator dot-green"></span>
+          <span>Privacy Guaranteed: RAM Only (Zero Video Transmitted)</span>
+        </div>
+        <div class="connection-status" id="ws-status">
+          <span class="dot-indicator dot-yellow"></span>
+          <span id="ws-status-text">Connecting...</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="dashboard-grid">
+      <!-- Left Column: Live State & Companion Controls -->
+      <section class="panel control-panel">
+        <h2 class="panel-title">Companion Controls & Telemetry</h2>
+        
+        <div class="telemetry-cards">
+          <div class="metric-card">
+            <span class="metric-label">Servo Pointer</span>
+            <span class="metric-value" id="val-servo-angle">90.0°</span>
+            <span class="metric-sub" id="val-servo-state">PARKED</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">System Audio</span>
+            <span class="metric-value" id="val-mute-state">ACTIVE</span>
+            <span class="metric-sub">Voice Prompts On</span>
+          </div>
+        </div>
+
+        <div class="control-actions">
+          <button id="btn-mute" class="btn btn-warning">
+            <span class="btn-icon">🔇</span> <span id="btn-mute-text">Mute Device</span>
+          </button>
+          <button id="btn-snooze" class="btn btn-secondary">
+            <span class="btn-icon">⏳</span> Snooze Alerts (30m)
+          </button>
+          <button id="btn-dismiss" class="btn btn-outline">
+            <span class="btn-icon">✕</span> Dismiss Current
+          </button>
+        </div>
+
+        <div class="info-card">
+          <h3 class="info-title">Active Field of View</h3>
+          <p class="info-desc">Perceiving objects across a 90° horizontal sweep. Video frames are processed in volatile RAM and immediately discarded.</p>
+          <div class="servo-gauge-container">
+            <div class="servo-arc">
+              <div class="servo-needle" id="servo-needle" style="transform: rotate(0deg);"></div>
+            </div>
+            <div class="gauge-labels">
+              <span>Left (10°)</span>
+              <span>Center (90°)</span>
+              <span>Right (170°)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Middle Column: Current Confirmed Detections -->
+      <section class="panel detections-panel">
+        <h2 class="panel-title">Current Confirmed Objects (No Video Feed)</h2>
+        <p class="panel-subtitle">Only symbolic text labels and spatial grid coordinates are recorded.</p>
+        <div id="detections-container" class="detections-list">
+          <div class="empty-state">No objects currently requiring intervention. Monitoring environment...</div>
+        </div>
+      </section>
+
+      <!-- Right Column: Agent Deliberation Log -->
+      <section class="panel logs-panel">
+        <h2 class="panel-title">Agent Deliberation & Decision Log</h2>
+        <p class="panel-subtitle">LangGraph Reasoning Flow (Perceive &rarr; Score &rarr; Decide &rarr; Act)</p>
+        <div id="decision-log" class="decision-stream">
+          <div class="empty-state">Awaiting next perception event...</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Section: Event Memory Log -->
+    <section class="panel history-panel">
+      <div class="panel-header-inline">
+        <h2 class="panel-title">Episodic Routine Memory (SQLite)</h2>
+        <button id="btn-refresh-history" class="btn btn-sm btn-outline">Refresh History</button>
+      </div>
+      <div class="table-container">
+        <table class="data-table" id="events-table">
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Object Label</th>
+              <th>Confidence</th>
+              <th>Grid Cell</th>
+              <th>Event Category</th>
+              <th>Feedback Action</th>
+            </tr>
+          </thead>
+          <tbody id="events-table-body">
+            <tr>
+              <td colspan="6" class="text-center">Loading episodic memory...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
