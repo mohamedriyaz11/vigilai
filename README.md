@@ -106,7 +106,13 @@ When transitioning from laptop simulation to the physical desktop companion:
 | **VIN / 5V** | External 5V Power Supply Rail | Common 5V DC Rail (powers ESP32 & Servo VCC) |
 | **GND** | External Common Ground | Tied ground plane across Host, ESP32, and Servo supply |
 
-*Complete schematic, power budget, and BOM are documented in [`docs/wiring.md`](docs/wiring.md) and [`docs/BOM.md`](docs/BOM.md).*
+### Documentation & Hardware Guides
+* [System Architecture & State Machine Pipeline](docs/architecture.md)
+* [Safety Architecture & FMEA Matrix](docs/safety.md)
+* [Serial Protocol Specification (CRC-8)](docs/serial_protocol.md)
+* [Hardware Wiring & Electrical Schematics](docs/wiring.md)
+* [Bill of Materials (8 Line Items, ~₹12,350 INR)](docs/BOM.md)
+* [Empirical Hardware Benchmarking Guide](docs/benchmarks.md)
 
 ---
 
